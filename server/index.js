@@ -5,9 +5,9 @@ const exphbs = require('express-handlebars');
 app.set('view engine', 'hbs');
 
 // Register Handlebars view engine
-app.engine('handlebars', exphbs());
+app.engine('.hbs', exphbs({defaultLayout: 'main', extname: '.hbs'}));
 // Use Handlebars view engine
-app.set('view engine', 'handlebars');
+app.set('view engine', '.hbs');
 
 // Pass in a test variable to be used in template:
 app.get('/', (req, res) => {
